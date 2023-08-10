@@ -4,21 +4,21 @@
 float computeAngle(float ax, float ay, float az) {
     float denominator = sqrt(ay * ay + az * az);
     
-    
+    // Check for division by zero
     if(denominator == 0.0f) {
-        return 0.0f;  \
+        return 0.0f;  
     }
     
     float pitch = atan(ax / denominator);
     
-    
+    // Convert the angle from radians to degrees if needed
     float pitchInDegrees = pitch * (180.0f / M_PI);
     
     return pitchInDegrees;
 }
 
 int main() {
-    
+    // Example usage
     float ax = 0.5f;  
     float ay = 0.5f;  
     float az = 1.0f; 
