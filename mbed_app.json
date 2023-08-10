@@ -1,0 +1,30 @@
+#include "mbed.h"
+#include <cmath>
+
+float computeAngle(float ax, float ay, float az) {
+    float denominator = sqrt(ay * ay + az * az);
+    
+    
+    if(denominator == 0.0f) {
+        return 0.0f;  \\
+    }
+    
+    float pitch = atan(ax / denominator);
+    
+    
+    float pitchInDegrees = pitch * (180.0f / M_PI);
+    
+    return pitchInDegrees;
+}
+
+int main() {
+    
+    float ax = 0.5f;  
+    float ay = 0.5f;  
+    float az = 1.0f; 
+    
+    float angle = computeAngle(ax, ay, az);
+    printf("Pitch: %f degrees\n", angle);
+    
+    while(1) { /* Infinite loop */ }
+}
