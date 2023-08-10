@@ -6,7 +6,7 @@ float computeAngle(float ax, float ay, float az) {
     
     
     if(denominator == 0.0f) {
-        return 0.0f;  \\
+        return 0.0f;  \
     }
     
     float pitch = atan(ax / denominator);
